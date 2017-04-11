@@ -62,14 +62,14 @@
                          enrollModel: this.enrollModel
                      });
 
-                     if (this.model.get('upgrade_url') && !this.model.get('expired')) {
+                     if (this.model.get('upgrade_url')) {
                          this.upgradeMessage = new UpgradeMessageView({
                              $el: $upgradeMessage,
                              model: this.model
                          });
 
                          $certStatus.remove();
-                     } else if (this.model.get('certificate_url') && !this.model.get('expired')) {
+                     } else if (this.model.get('certificate_url')) {
                          this.certificateStatus = new CertificateStatusView({
                              $el: $certStatus,
                              model: this.model

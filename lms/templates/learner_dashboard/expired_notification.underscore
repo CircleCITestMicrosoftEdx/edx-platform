@@ -1,2 +1,2 @@
-<span><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i></span>
-<span>You enrolled in this course but did not earn the certificate required to complete this program.</span>
+<div class="expired-icon"><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i></div>
+<div class="expired-text">You enrolled in this course but did not earn the certificate required to complete this program.</div>

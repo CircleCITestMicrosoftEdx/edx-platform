@@ -53,7 +53,7 @@ class TestProgramProgressMeter(TestCase):
     def _create_enrollments(self, *course_run_ids):
         """Variadic helper used to create course run enrollments."""
         for course_run_id in course_run_ids:
-            CourseEnrollmentFactory(user=self.user, course_id=course_run_id)
+            CourseEnrollmentFactory(user=self.user, course_id=course_run_id, mode='verified')
 
     def _assert_progress(self, meter, *progresses):
         """Variadic helper used to verify progress calculations."""
@@ -127,7 +127,7 @@ class TestProgramProgressMeter(TestCase):
             ProgramFactory(
                 courses=[
                     CourseFactory(course_runs=[
-                        CourseRunFactory(key=course_run_key),
+                        CourseRunFactory(key=course_run_key, type='verified'),
                     ]),
                 ]
             )
@@ -160,14 +160,14 @@ class TestProgramProgressMeter(TestCase):
             ProgramFactory(
                 courses=[
                     CourseFactory(course_runs=[
-                        CourseRunFactory(key=newer_course_run_key),
+                        CourseRunFactory(key=newer_course_run_key, type='verified'),
                     ]),
                 ]
             ),
             ProgramFactory(
                 courses=[
                     CourseFactory(course_runs=[
-                        CourseRunFactory(key=older_course_run_key),
+                        CourseRunFactory(key=older_course_run_key, type='verified'),
                     ]),
                 ]
             ),
@@ -200,7 +200,7 @@ class TestProgramProgressMeter(TestCase):
             ProgramFactory(
                 courses=[
                     CourseFactory(course_runs=[
-                        CourseRunFactory(key=shared_course_run_key),
+                        CourseRunFactory(key=shared_course_run_key, type='verified'),
                     ]),
                 ]
             )
@@ -212,7 +212,7 @@ class TestProgramProgressMeter(TestCase):
             ProgramFactory(
                 courses=[
                     CourseFactory(course_runs=[
-                        CourseRunFactory(key=solo_course_run_key),
+                        CourseRunFactory(key=solo_course_run_key, type='verified'),
                     ]),
                 ]
             ),
@@ -242,10 +242,10 @@ class TestProgramProgressMeter(TestCase):
             ProgramFactory(
                 courses=[
                     CourseFactory(course_runs=[
-                        CourseRunFactory(key=first_course_run_key),
+                        CourseRunFactory(key=first_course_run_key, type='verified'),
                     ]),
                     CourseFactory(course_runs=[
-                        CourseRunFactory(key=second_course_run_key),
+                        CourseRunFactory(key=second_course_run_key, type='verified'),
                     ]),
                 ]
             ),
