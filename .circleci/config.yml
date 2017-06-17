@@ -8,10 +8,10 @@ jobs:
       - checkout
       - run:
         name: Install Dependencies
-        command: './scripts/circle-ci-tests.sh'
+        command: ./scripts/circle-ci-tests.sh
       - run:
         name: Run Tests 
-        command: './scripts/all-tests.sh'
+        command: ./scripts/all-tests.sh
       - run:
         name: Code Coverage
         command: |
