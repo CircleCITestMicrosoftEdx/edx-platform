@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: circleci/python:2.7-browsers
     working_directory: ~/edx-platform
+    parallelism: 3
     steps:
       - checkout
       - run:
