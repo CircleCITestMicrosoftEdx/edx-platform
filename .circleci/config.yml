@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/python:2.7-browsers
+    working_directory: ~/edx-platform
     steps:
       - checkout
       - run:
