@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Install Dependencies
-          command: ./scripts/circle-ci-tests.sh
+          command: ./scripts/circle-ci-install.sh
       - run:
           name: Run Tests 
           command: ./scripts/all-tests.sh
